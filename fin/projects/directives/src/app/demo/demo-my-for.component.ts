@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
     <h1>Demo Custom Structural Directive</h1>
     <div>
       <ul>
-        <li *ngFor="let item of items; let i = index">
+        <li *myFor="let item of items; let i = index">
           {{i}} - {{ item.name }} - {{ item.location }}
         </li>
       </ul>
+
+      <ul>
+        <ng-template myFor [myForOf]="items" let-item let-i="index">
+          <li> {{i}} - {{ item.name }} - {{ item.location }} </li>
+        </ng-template>
+      </ul>
+
     </div>
   `
 })
@@ -21,7 +28,16 @@ export class DemoMyForComponent implements OnInit {
     { name: 'Juan', age: 40, location: 'Barcelona' }
   ]
 
-  constructor() { }
+  constructor(
+  ) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    setTimeout(() => {
+      this.items = [
+        ...this.items,
+        { name: 'Emilio', location: 'Zaragoza', age: 54 }
+      ];
+
+    }, 2000);
+  }
 }

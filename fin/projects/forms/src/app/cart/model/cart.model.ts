@@ -8,3 +8,5 @@ export interface Product {
   name: string;
   price: number;
 }
+
+export type ProductMap = Map<number, Product>;

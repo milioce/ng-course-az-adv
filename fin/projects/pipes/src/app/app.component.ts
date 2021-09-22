@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   template: `
-    <demo-pipe></demo-pipe>
+    <demo-provider></demo-provider>
   `,
   styles: []
 })
