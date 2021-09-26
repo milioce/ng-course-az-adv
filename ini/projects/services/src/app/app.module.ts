@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MailModule } from './mail/mail.module';
+import { FoodModule } from './food/food.module';
 
 @NgModule({
   declarations: [
@@ -12,9 +12,10 @@ import { MailModule } from './mail/mail.module';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     AppRoutingModule,
-    MailModule
+    HttpClientModule,
+    FoodModule,
+    // StoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

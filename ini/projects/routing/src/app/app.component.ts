@@ -21,9 +21,7 @@ import { Component, OnInit } from '@angular/core';
             Trash
           </a>
         </nav>
-        <div class="mail">
-          <router-outlet></router-outlet>
-        </div>
+        <app-mail></app-mail>
       </div>
     </div>
   `,
