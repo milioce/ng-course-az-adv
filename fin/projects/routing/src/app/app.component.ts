@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -11,19 +13,22 @@ import { Component, OnInit } from '@angular/core';
       <div class="app__content">
         <nav>
           <a
-            routerLink="folder/inbox"
+            [routerLink]="['/dashboard']"
+            routerLinkActive="active">
+            Dashboard
+          </a>
+          <a
+            [routerLink]="[{ outlets: {primary: 'mail/folder/inbox', pane: null} }]"
             routerLinkActive="active">
             Inbox
           </a>
           <a
-            routerLink="folder/trash"
+            [routerLink]="[{ outlets: {primary: 'mail/folder/trash', pane: null} }]"
             routerLinkActive="active">
             Trash
           </a>
         </nav>
-        <div class="mail">
-          <router-outlet></router-outlet>
-        </div>
+        <router-outlet></router-outlet>
       </div>
     </div>
   `,
@@ -32,5 +37,9 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'routing';
 
-  ngOnInit() {}
+  constructor(private router: Router) {
+  }
+
+  ngOnInit() {
+  }
 }

@@ -9,4 +9,9 @@ export interface Product {
   price: number;
 }
 
+export interface Coupon {
+  id: string;
+  expired: boolean;
+}
+
 export type ProductMap = Map<number, Product>;

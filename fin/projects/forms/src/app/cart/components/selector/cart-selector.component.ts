@@ -9,7 +9,7 @@ import { Product } from '../../model/cart.model';
     <div class="stock-selector" [formGroup]="parent">
       <div formGroupName="selector">
         <select formControlName="product_id">
-          <option value="">Select stock</option>
+          <option value="">Select product</option>
           <option *ngFor="let product of products"
             [value]="product.id">
             {{ product.name }}
@@ -19,8 +19,15 @@ import { Product } from '../../model/cart.model';
         <input type="number" step="10" min="10" max="1000"
         formControlName="quantity">
 
-        <button type="button" (click)="onAdd()">Add to Cart</button>
+        <button type="button" (click)="onAdd()"
+        [disabled]="parent.hasError('cartItemExists')">Add to Cart</button>
+
+        <div class="stock-selector__error" *ngIf="productExists">
+          the product already exists in the cart
+        </div>
+
       </div>
+
     </div>
   `
 })
@@ -30,6 +37,13 @@ export class CartSelectorComponent implements OnInit {
   @Input() products: Product[];
 
   @Output() added = new EventEmitter();
+
+  get productExists() {
+    return (
+      this.parent.get('selector.product_id').dirty &&
+      this.parent.hasError('cartItemExists')
+    );
+  }
 
   constructor() { }
 
@@ -44,7 +58,6 @@ export class CartSelectorComponent implements OnInit {
       product_id: '',
       quantity: 1
     });
-
-
   }
+
 }

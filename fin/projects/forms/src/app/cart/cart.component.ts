@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { forkJoin } from 'rxjs';
+import { AbstractControl, FormArray, FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import { forkJoin, Observable, of } from 'rxjs';
+import { catchError, map } from 'rxjs/operators';
+
 import { Item, Product, ProductMap } from './model/cart.model';
 import { CartService } from './services/cart.service';
+import { CartValidators } from './validators/cart.validators';
 
 @Component({
   selector: 'app-cart',
@@ -60,13 +63,15 @@ export class CartComponent implements OnInit {
     this.form = this.fb.group({
       store: this.fb.group({
         postalCode: ['', Validators.required],
-        coupon: ['']
+        coupon: ['', CartValidators.validCoupon, this.validateCoupon.bind(this)]
       }),
       selector: this.fb.group({
         product_id: '',
         quantity: 10
       }),
       cart: this.fb.array([])
+    }, {
+      validators: CartValidators.checkCartItemExists
     });
 
     this.form.get('cart').valueChanges.subscribe(
@@ -122,6 +127,15 @@ export class CartComponent implements OnInit {
     }, 0);
 
     this.total = total;
+  }
+
+  private validateCoupon(control: AbstractControl): Observable<ValidationErrors> {
+    return this.cartService.getCoupon(control.value).pipe(
+      map(coupon => {
+        return coupon.expired ? { couponExpired: true} : null;
+      }),
+      catchError(() => of({ couponUnknown: true}))
+    )
   }
 
 }

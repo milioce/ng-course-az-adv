@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Item, Product } from '../model/cart.model';
+import { Coupon, Item, Product } from '../model/cart.model';
 
 @Injectable({providedIn: 'root'})
 export class CartService {
@@ -13,6 +13,10 @@ export class CartService {
 
   getproducts() {
     return this.http.get<Product[]>('/api/products');
+  }
+
+  getCoupon(id: string) {
+    return this.http.get<Coupon>(`/api/coupons/${id}`)
   }
 
 }

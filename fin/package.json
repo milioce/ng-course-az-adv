@@ -11,9 +11,10 @@
     "start:pipes": "ng serve --project pipes",
     "start:forms": "concurrently \"npm run mock:server\" \"npm run serve-forms\"",
     "start:routing": "concurrently \"npm run mock:server\" \"npm run serve-routing\"",
-
+    "start:services": "concurrently \"npm run mock:server\" \"npm run serve-services\"",
     "serve-forms": "ng serve --project forms --proxy-config proxy.conf.json",
     "serve-routing": "ng serve --project routing --proxy-config proxy.conf.json",
+    "serve-services": "ng serve --project services --proxy-config proxy.conf.json",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
@@ -29,8 +30,6 @@
     "@angular/platform-browser": "~11.2.7",
     "@angular/platform-browser-dynamic": "~11.2.7",
     "@angular/router": "~11.2.7",
-    "@ngx-translate/core": "^13.0.0",
-    "@ngx-translate/http-loader": "^6.0.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"

@@ -13,14 +13,12 @@
     { "id": 7, "price": 2.25, "name": "Cable USB 2.0" },
     { "id": 8, "price": 28, "name": "Pulsera de actividad" }
   ],
-
   "coupons": [
     { "id": "A123", "expired": false },
     { "id": "A987", "expired": true },
     { "id": "B123", "expired": false },
     { "id": "C123", "expired": false }
   ],
-
   "messages": [
     {
       "id": 1,
@@ -54,5 +52,49 @@
       "full": "Full message from Laurence Murray",
       "timestamp": 1487845787719
     }
+  ],
+  "pizzas": [
+    { "id": "1", "name": "Carbonara", "price": 10 },
+    { "id": "2", "name": "Napolitana", "price": 12 },
+    { "id": "3", "name": "4 estaciones", "price": 12 }
+  ],
+  "sides": [
+    { "id": "1", "name": "Alitas de pollo", "price": 6 },
+    { "id": "2", "name": "Patatas fritas", "price": 5 },
+    { "id": "3", "name": "Ensalada", "price": 5 }
+  ],
+  "drinks": [
+    { "id": "1", "name": "Coca cola", "price": 1.50 },
+    { "id": "2", "name": "Limonada", "price": 1.50 },
+    { "id": "3", "name": "Agua", "price": 1 }
+  ],
+  "countries": [
+    { "id": "de", "name": "Alemania" },
+    { "id": "at", "name": "Austria" },
+    { "id": "bg", "name": "Bulgaria" },
+    { "id": "be", "name": "Bélgica" },
+    { "id": "cz", "name": "Chequia" },
+    { "id": "cy", "name": "Chipre" },
+    { "id": "hr", "name": "Croacia" },
+    { "id": "dk", "name": "Dinamarca" },
+    { "id": "sk", "name": "Eslovaquia" },
+    { "id": "si", "name": "Eslovenia" },
+    { "id": "es", "name": "España" },
+    { "id": "ee", "name": "Estonia" },
+    { "id": "fi", "name": "Finlandia" },
+    { "id": "fr", "name": "Francia" },
+    { "id": "gr", "name": "Grecia" },
+    { "id": "hu", "name": "Hungría" },
+    { "id": "ie", "name": "Irlanda" },
+    { "id": "it", "name": "Italia" },
+    { "id": "lv", "name": "Letonia" },
+    { "id": "lt", "name": "Lituania" },
+    { "id": "lu", "name": "Luxemburgo" },
+    { "id": "mt", "name": "Malta" },
+    { "id": "nl", "name": "Países Bajos" },
+    { "id": "pl", "name": "Polonia" },
+    { "id": "pt", "name": "Portugal" },
+    { "id": "ro", "name": "Rumanía" },
+    { "id": "se", "name": "Suecia" }
   ]
 }
