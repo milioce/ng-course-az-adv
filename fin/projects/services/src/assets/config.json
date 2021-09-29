@@ -1,0 +1,6 @@
+{
+  "apiHost": "/api",
+  "level": 1,
+  "apiKey": "1234-5678-1234",
+  "default": "es"
+}
