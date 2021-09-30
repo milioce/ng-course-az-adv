@@ -96,5 +96,51 @@
     { "id": "pt", "name": "Portugal" },
     { "id": "ro", "name": "Rumanía" },
     { "id": "se", "name": "Suecia" }
+  ],
+  "users": [
+    { "id": 1, "name": "admin", "category": "A"  },
+    { "id": 2, "name": "Pedro", "category": "A"  },
+    { "id": 3, "name": "Juan", "category": "A"  },
+    { "id": 4, "name": "Maria", "category": "A"  },
+    { "id": 5, "name": "Alberto", "category": "A"  },
+    { "id": 6, "name": "Sonia", "category": "B"  },
+    { "id": 7, "name": "Jorge", "category": "B"  },
+    { "id": 8, "name": "Victor", "category": "B"  },
+    { "id": 9, "name": "Sonia", "category": "B"  },
+    { "id": 10, "name": "Emilio", "category": "B"  },
+    { "id": 11, "name": "Carlos", "category": "B"  },
+    { "id": 12, "name": "Antonio", "category": "C"  },
+    { "id": 13, "name": "Vero", "category": "C"  },
+    { "id": 14, "name": "Elena", "category": "C"  },
+    { "id": 15, "name": "Clara", "category": "C"  },
+    { "id": 16, "name": "Arturo", "category": "C"  },
+    { "id": 17, "name": "Jose", "category": "C"  },
+    { "id": 18, "name": "Joaquín", "category": "A"  },
+    { "id": 19, "name": "Tomás", "category": "A"  },
+    { "id": 20, "name": "Luis", "category": "B"  },
+    { "id": 21, "name": "Pilar", "category": "B"  },
+    { "id": 23, "name": "Jesús", "category": "C"  },
+    { "id": 23, "name": "Felisa", "category": "C"  },
+    { "id": 24, "name": "Ainhoa", "category": "A"  },
+    { "id": 25, "name": "Marta", "category": "B"  },
+    { "id": 26, "name": "Nerea", "category": "A"  }
+  ],
+  "documents": [
+    { "id": 1, "filename": "image1.jpg", "size": 245, "content": "aaaaaaaaaa" }
+  ],
+  "members": [
+    {
+      "id": 1,
+      "name": "Emilio",
+      "lastname": "Calejero",
+      "email": "emilio@gmail.com",
+      "documents": [
+        {
+          "id": 1,
+          "filename": "image1.jpg",
+          "size": 245
+        }
+      ]
+    }
   ]
 }

@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+a {
+  margin: 0 10px;
+}
+
+label, input {
+  display: block;
+}
+label {
+  margin-top: 10px;
+}
+button {
+  margin-top: 20px;
+}
+
+.filters {
+  display: flex;
+}
+.filter {
+  display: inline;
+  margin-right: 10px;
+}
