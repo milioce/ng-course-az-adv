@@ -25,42 +25,6 @@ export class DataService {
   }
 
   /**
-   * Cacheamos el observable.
-   */
-  getCountries1() {
-    if (!this.cache) {
-      this.cache = this.getRequest();
-    }
-
-    return this.cache;
-  }
-
-  getCountries2() {
-    if (!this.cache) {
-      this.cache = this.getRequest().pipe(
-        shareReplay(1)
-      );
-    }
-
-    return this.cache;
-  }
-
-  getCountries3() {
-    if (!this.cache) {
-      const clean$ = timer(10000).pipe(
-        tap(_ => this.cache = null)
-      );
-
-      this.cache = this.getRequest().pipe(
-        tap(_ => clean$.subscribe()),
-        shareReplay(1),
-      );
-    }
-
-    return this.cache;
-  }
-
-  /**
    * Cada vez que te suscribes se crea un nuevo productor.
    */
   getRequest() {
